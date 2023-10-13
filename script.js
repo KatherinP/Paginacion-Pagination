@@ -51,3 +51,27 @@ prevNext.forEach(button => {
         });
     });
 });
+
+// add event listener to the "Start" button/agregar detector de eventos al botón "Inicio"
+startBtn.addEventListener("click", () => {
+    // remove the "active" class from the previously active number link/eliminar la clase "activa" del enlace de número previamente activo
+    document.querySelector(".active").classList.remove("active");
+    // add the "active" class to the first number link/agregue la clase "activa" al primer enlace numérico
+    numbers[0].classList.add("active");
+    currentStep = 0;
+    updateBtn(); //update the button states/actualizar los estados del botón
+    endBtn.disabled = false;
+    prevNext[1].disabled = false;
+});
+
+// add event listener to the "End" button/agregar detector de eventos al botón "Finalizar"
+endBtn.addEventListener("click", () => {
+    // remove the "active" class from the previously active number link/eliminar la clase "activa" del enlace de número previamente activo
+    document.querySelector(".active").classList.remove("active");
+    // add the "active" class to the last number link/agregue la clase "activa" al ultimo enlace numérico
+    numbers[4].classList.add("active");
+    currentStep = 4;
+    updateBtn(); //update the button states/actualizar los estados del botón
+    startBtn.disabled = false;
+    prevNext[0].disabled = false;
+});
